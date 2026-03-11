@@ -1,0 +1,32 @@
+import {p} from './fontConstants';
+
+export const colors = {
+  primary: '#FF057C',
+  primary2: '#42A5F5',
+  primary3: '#8D0B93',
+  secondaryColor: '#FFD54F',
+  secondaryColor2: '#0288D1',
+  accentColor: '#388E3C',
+  accentColor2: '#7E57C2',
+  softGray: '#A5B0C7',
+  softGray2: '#2F3748',
+  darkGray: '#4E596F',
+  deepGray: '#242A38',
+  DeepBlue: '#22273E',
+  black: '#151A24',
+  white: '#fff',
+  violet: '#321575',
+  purple: '#8D0B93',
+  inputBg: 'rgba(43, 54, 74, 0.62)',
+  inputBg2: '#2B3243',
+  shadow: 'rgba(0, 0, 255, 0.14)',
+  bg1: '#222A3D',
+  bg2: '#363F5C',
+  bg3: '#232C3D',
+  trans: 'transparent',
+  black78: 'rgba(0, 0, 0, 0.78)',
+  green: '#388E3C',
+  fadeBlue: 'rgba(37, 50, 81, 0.32)',
+  fadeblue45: 'rgba(52, 61, 93, 0.45)',
+
+};

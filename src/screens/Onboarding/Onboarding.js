@@ -1,11 +1,11 @@
 import { Text, View } from 'react-native'
-import { Styles } from './Style'
+import Style from './Style'
 import React from 'react'
 
 const Onboarding = () => {
   return (
     <View>
-      <Text style={Styles.text}>Onboarding</Text>
+      <Text style={Style.text}>Onboarding</Text>
     </View>
   )
 }

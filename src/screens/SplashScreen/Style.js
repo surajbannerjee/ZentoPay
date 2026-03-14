@@ -6,7 +6,7 @@ import { H1, H1BIG, H5, H6, p, fontFamily } from '../../constants/fontConstants'
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.bg1,
+    backgroundColor: colors.background,
   },
   contentContainer: {
     flex: 1,

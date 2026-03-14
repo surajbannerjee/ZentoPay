@@ -18,10 +18,16 @@ export const small = RFPercentage(1.4);
 export const smallS = RFPercentage(1.2);
 
 export const fontFamily = {
-    regular: 'Montserrat-Regular',
-    medium: 'Montserrat-Medium',
-    semiBold: 'Montserrat-SemiBold',
-    bold: 'Montserrat-Bold',
-    extraBold: 'Montserrat-ExtraBold',
-    italic: 'Montserrat-Italic',
+    regular: 'Outfit-Regular',
+    medium: 'Outfit-Medium',
+    semiBold: 'Outfit-SemiBold',
+    bold: 'Outfit-Bold',
+    light: 'Outfit-Light',
+    thin: 'Outfit-Thin',
+    clashRegular: 'ClashDisplay-Regular',
+    clashMedium: 'ClashDisplay-Medium',
+    clashSemiBold: 'ClashDisplay-Semibold',
+    clashBold: 'ClashDisplay-Bold',
+    clashLight: 'ClashDisplay-Light',
+    clashExtraLight: 'ClashDisplay-Extralight',
 }

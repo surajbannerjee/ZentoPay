@@ -1,0 +1,53 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/ClashDisplay-Bold.otf",
+      "sha1": "bd717ab64fc380747bc734a097d6379c6cca24e3"
+    },
+    {
+      "path": "src/assets/fonts/ClashDisplay-Extralight.otf",
+      "sha1": "be7e3a551c21ce3b67ebde1c45faacac63948c1c"
+    },
+    {
+      "path": "src/assets/fonts/ClashDisplay-Light.otf",
+      "sha1": "4853269d062e6326fda140287fc079635e4489ce"
+    },
+    {
+      "path": "src/assets/fonts/ClashDisplay-Medium.otf",
+      "sha1": "fdc4f408b5117fd85166b198dfe4d0fac52c34c2"
+    },
+    {
+      "path": "src/assets/fonts/ClashDisplay-Regular.otf",
+      "sha1": "67d49fed960a230e12c212d5312dc3cf3ed1d73b"
+    },
+    {
+      "path": "src/assets/fonts/ClashDisplay-Semibold.otf",
+      "sha1": "64e9b35c59ea054e2aa2ac545d1692b61c8fc4bc"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-Bold.ttf",
+      "sha1": "148c9a4f145442e85509a202472f3dfc002f2359"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-Light.ttf",
+      "sha1": "22de7012df58897c09b4d31b963d317293237c1e"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-Medium.ttf",
+      "sha1": "9d7db2e6a458135b81b68078a7f4863fa17c2024"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-Regular.ttf",
+      "sha1": "06a8de7221f96cdce3e90e32444f1db7897b479a"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-SemiBold.ttf",
+      "sha1": "187a51467f6faeab3853f62a38c729817a938bc0"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-Thin.ttf",
+      "sha1": "f20be5b036a2a7452d142c9947ee774988a10352"
+    }
+  ]
+}

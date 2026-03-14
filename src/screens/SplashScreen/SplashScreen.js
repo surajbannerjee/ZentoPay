@@ -15,84 +15,68 @@ import { useNavigation } from '@react-navigation/native';
 const SplashScreen = () => {
   const navigation = useNavigation();
 
-  // Animation Values
-  const scaleValue = useRef(new Animated.Value(0)).current;
-  const opacityValue = useRef(new Animated.Value(0)).current;
+  // animation values
+  const logoTranslateX = useRef(new Animated.Value(-200)).current;
+  const logoOpacity = useRef(new Animated.Value(0)).current;
+
+  const textTranslateY = useRef(new Animated.Value(40)).current;
   const textOpacity = useRef(new Animated.Value(0)).current;
-  const textTranslateY = useRef(new Animated.Value(30)).current;
-  const rotateValue = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    // Animation Sequence
+
     Animated.sequence([
-      // 1. Logo Scale and Opacity
+      // Logo animation
       Animated.parallel([
-        Animated.spring(scaleValue, {
-          toValue: 1,
-          friction: 4,
+        Animated.timing(logoTranslateX, {
+          toValue: 0,
+          duration: 1000,
           useNativeDriver: true,
         }),
-        Animated.timing(opacityValue, {
+        Animated.timing(logoOpacity, {
           toValue: 1,
           duration: 1000,
           useNativeDriver: true,
         }),
       ]),
-      // 2. Subtle rotation
-      Animated.timing(rotateValue, {
-        toValue: 1,
-        duration: 800,
-        useNativeDriver: true,
-      }),
-      // 3. Text Reveal
+
+      // Text animation
       Animated.parallel([
-        Animated.timing(textOpacity, {
-          toValue: 1,
-          duration: 1000,
-          useNativeDriver: true,
-        }),
         Animated.timing(textTranslateY, {
           toValue: 0,
-          duration: 1000,
+          duration: 700,
+          useNativeDriver: true,
+        }),
+        Animated.timing(textOpacity, {
+          toValue: 1,
+          duration: 700,
           useNativeDriver: true,
         }),
       ]),
     ]).start();
 
-    // Navigation Timeout (Simulating loading or wait for animation)
-    const timeout = setTimeout(() => {
+    const timer = setTimeout(() => {
       navigation.replace('Onboarding');
-    }, 4500);
+    }, 3000);
 
-    return () => clearTimeout(timeout);
-  }, [navigation, scaleValue, opacityValue, rotateValue, textOpacity, textTranslateY]);
+    return () => clearTimeout(timer);
 
-  const rotation = rotateValue.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg'],
-  });
+  }, []);
 
   return (
     <SafeAreaView style={Style.container}>
       <StatusBar
-        backgroundColor={colors.bg1}
+        backgroundColor={colors.shadowGrey}
         barStyle="light-content"
-        translucent={false}
       />
 
       <View style={Style.contentContainer}>
-        {/* Logo with Animation */}
+
+        {/* Logo */}
         <Animated.View
-          style={[
-            Style.logoCircle,
-            {
-              opacity: opacityValue,
-              transform: [
-                { scale: scaleValue },
-                { rotate: rotation }
-              ],
-            },
-          ]}
+          style={{
+            opacity: logoOpacity,
+            transform: [{ translateX: logoTranslateX }],
+          }}
         >
           <Image
             source={Logo}
@@ -101,26 +85,20 @@ const SplashScreen = () => {
           />
         </Animated.View>
 
-        {/* Text with Animation */}
-        <Animated.View
+        {/* App Name */}
+        <Animated.Text
           style={[
-            Style.textContainer,
+            Style.title,
             {
               opacity: textOpacity,
               transform: [{ translateY: textTranslateY }],
             },
           ]}
         >
-          <Text style={Style.title}>ZentoPay</Text>
-          <View style={Style.line} />
-          <Text style={Style.subtitle}>FAST • SECURE • RELIABLE</Text>
-        </Animated.View>
-      </View>
+          Likhloo
+        </Animated.Text>
 
-      {/* Bottom Version Text */}
-      <Animated.View style={[Style.footer, { opacity: textOpacity }]}>
-        <Text style={Style.versionText}>Version 1.0.0</Text>
-      </Animated.View>
+      </View>
     </SafeAreaView>
   );
 };

@@ -4,8 +4,9 @@ import React from 'react'
 
 const Onboarding = () => {
   return (
-    <View>
-      <Text style={Style.text}>Onboarding</Text>
+    <View style={Style.textbg}>
+      <Text style={Style.text}>Likhloo Outfit</Text>
+      <Text style={Style.text2}>Likhloo ClashDisplay</Text>
     </View>
   )
 }

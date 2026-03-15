@@ -1,6 +1,6 @@
 export const GetStartedImage = require('../assets/Images/GetStartedImage.png');
 export const SImage = require('../assets/Images/SScreen.png');
-export const Logo = require('../assets/Images/logo.png');
+export const Logo = require('../assets/Images/logo.gif');
 export const Img0 = require('../assets/Images/0.png');
 export const Img1 = require('../assets/Images/1.png');
 export const Img2 = require('../assets/Images/2.png');

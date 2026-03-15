@@ -11,7 +11,7 @@ export const colors = {
   // optional useful aliases for UI
   primary: '#CBF146',
   secondary: '#A4BF39',
-  background: '#1F1E24',
+  background: '#000000',
   surface: '#363642',
   textPrimary: '#FFFFFF',
   textSecondary: '#EBEBED',

@@ -27,8 +27,8 @@ export default StyleSheet.create({
     elevation: 10,
   },
   logo: {
-    width: wp(25),
-    height: wp(25),
+    width: wp(100 ),
+    height: wp(100),
   },
   textContainer: {
     marginTop: hp(4),

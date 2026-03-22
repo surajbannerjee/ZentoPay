@@ -15,6 +15,5 @@ export const colors = {
   surface: '#363642',
   textPrimary: '#FFFFFF',
   textSecondary: '#EBEBED',
-
   transparent: 'transparent',
 };

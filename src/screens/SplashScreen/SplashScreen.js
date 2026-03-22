@@ -6,6 +6,7 @@ import {
   StatusBar,
   Image,
   SafeAreaView,
+  Easing,
 } from 'react-native';
 import Style from './Style';
 import { Logo } from '../../constants/images';
@@ -15,89 +16,95 @@ import { useNavigation } from '@react-navigation/native';
 const SplashScreen = () => {
   const navigation = useNavigation();
 
-  // animation values
-  const logoTranslateX = useRef(new Animated.Value(-200)).current;
+  // Logo animations
+  const logoScale = useRef(new Animated.Value(0.6)).current;
   const logoOpacity = useRef(new Animated.Value(0)).current;
 
-  const textTranslateY = useRef(new Animated.Value(40)).current;
-  const textOpacity = useRef(new Animated.Value(0)).current;
+  // Tagline animations
+  const taglineOpacity = useRef(new Animated.Value(0)).current;
+  const taglineTranslateY = useRef(new Animated.Value(20)).current;
 
   useEffect(() => {
-
-    Animated.sequence([
-      // Logo animation
+    // Main smooth animation sequence
+    const mainSequence = Animated.sequence([
+      // Logo entrance - smooth scale and fade
       Animated.parallel([
-        Animated.timing(logoTranslateX, {
-          toValue: 0,
-          duration: 1000,
+        Animated.timing(logoScale, {
+          toValue: 1,
+          duration: 700,
+          easing: Easing.out(Easing.quad),
           useNativeDriver: true,
         }),
         Animated.timing(logoOpacity, {
           toValue: 1,
-          duration: 1000,
+          duration: 700,
           useNativeDriver: true,
         }),
       ]),
 
-      // Text animation
+      // Delay before tagline
+      Animated.delay(300),
+
+      // Tagline animation
       Animated.parallel([
-        Animated.timing(textTranslateY, {
-          toValue: 0,
-          duration: 700,
+        Animated.timing(taglineOpacity, {
+          toValue: 1,
+          duration: 600,
           useNativeDriver: true,
         }),
-        Animated.timing(textOpacity, {
-          toValue: 1,
-          duration: 700,
+        Animated.timing(taglineTranslateY, {
+          toValue: 0,
+          duration: 600,
+          easing: Easing.out(Easing.quad),
           useNativeDriver: true,
         }),
       ]),
-    ]).start();
+    ]);
 
+    // Start animation
+    mainSequence.start();
+
+    // Navigation timer
     const timer = setTimeout(() => {
       navigation.replace('Onboarding');
-    }, 3000);
+    }, 2800);
 
     return () => clearTimeout(timer);
-
-  }, []);
+  }, [navigation]);
 
   return (
     <SafeAreaView style={Style.container}>
       <StatusBar
-        backgroundColor={colors.shadowGrey}
+        backgroundColor={colors.background}
         barStyle="light-content"
       />
 
       <View style={Style.contentContainer}>
-
         {/* Logo */}
-        <Animated.View
-          style={{
-            opacity: logoOpacity,
-            transform: [{ translateX: logoTranslateX }],
-          }}
-        >
-          <Image
-            source={Logo}
-            style={Style.logo}
-            resizeMode="contain"
-          />
-        </Animated.View>
+        <Animated.Image
+          source={Logo}
+          style={[
+            Style.logo,
+            {
+              opacity: logoOpacity,
+              transform: [{ scale: logoScale }],
+            },
+          ]}
+          resizeMode="contain"
+        />
 
-        {/* App Name */}
+        {/* Tagline */}
         <Animated.Text
           style={[
-            Style.title,
+            Style.tagline,
             {
-              opacity: textOpacity,
-              transform: [{ translateY: textTranslateY }],
+              opacity: taglineOpacity,
+              transform: [{ translateY: taglineTranslateY }],
             },
           ]}
         >
-          Likhloo
+          Secure Payments
         </Animated.Text>
-
       </View>
     </SafeAreaView>
   );

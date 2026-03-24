@@ -61,15 +61,15 @@ const SplashScreen = () => {
       ]),
     ]);
 
-    // Start animation
-    mainSequence.start();
-
-    // Navigation timer
-    const timer = setTimeout(() => {
+    // Start animation and navigate when it completes
+    mainSequence.start(() => {
       navigation.replace('Onboarding');
-    }, 2800);
+    });
 
-    return () => clearTimeout(timer);
+    return () => {
+      // stop the animation if the component unmounts before completion
+      mainSequence.stop && mainSequence.stop();
+    };
   }, [navigation]);
 
   return (

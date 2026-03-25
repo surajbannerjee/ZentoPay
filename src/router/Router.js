@@ -2,8 +2,9 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { useSelector } from 'react-redux'
-import Login from '../screens/Login/Login'
-import SignUp from '../screens/SignUp/SignUp'
+import Login from '../screens/authScreens/Login/Login'
+import Otp from '../screens/authScreens/Login/Otp'
+import SignUp from '../screens/authScreens/SignUp/SignUp'
 import Home from '../screens/Home/Home'
 import Profile from '../screens/Profile/Profile'
 import ScanQR from '../screens/ScanQR/ScanQR'
@@ -33,6 +34,7 @@ const LoginStack = () => {
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="Onboarding" component={Onboarding} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Otp" component={Otp} />
       <Stack.Screen name="SignUp" component={SignUp} />
     </Stack.Navigator>
   )

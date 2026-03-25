@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1004207008046",
+    "project_id": "likhloo-7dfe8",
+    "storage_bucket": "likhloo-7dfe8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004207008046:android:8a81d934ba97ce4022f2bf",
+        "android_client_info": {
+          "package_name": "com.zentopay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA48XQOvknVRuCbM8RGAvWDlhgoj32v7H8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
